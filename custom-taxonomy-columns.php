@@ -2,7 +2,8 @@
 /*
 Plugin Name: Custom Taxonomy Columns
 Description: Give custom taxonomies a column on the manage posts page. 
-Author: Jason Conroy, Brent Shepherd
+Author: _FindingSimple
+Author URI: http://findingsimple.com/
 Version: 1.0
 */
 
@@ -56,3 +57,16 @@ function rt_column_contents( $column_name, $post_id ) {
 	}
 }
 add_action( 'manage_posts_custom_column', 'rt_column_contents', 10, 2 );
+
+
+/**
+ * Generate mock taxonomies for testing.
+ **/
+function rt_mock_tax(){
+	$args = array( 'label' => 'Mocks' );
+	register_taxonomy( 'mock_tax', 'post', $args );
+
+	$args = array( 'label' => 'Faux', 'hierarchical' => true );
+	register_taxonomy( 'faux_tax', 'post', $args );
+}
+add_action( 'init', 'rt_mock_tax' );
