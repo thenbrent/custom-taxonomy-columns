@@ -35,7 +35,13 @@ add_filter( 'manage_posts_columns', 'rt_add_columns', 10, 2 ); //Filter out Post
  * custom column on the manage posts page.
  **/
 function rt_column_contents( $column_name, $post_id ) {
-	global $wpdb;
+	global $wpdb, $post_type;
+	
+	$type = ''; //set blank post type
+	
+	if ($post_type != 'post') {
+		$type = 'post_type=' . $post_type . '&';
+	}
 
 	$taxonomy_names = get_object_taxonomies( 'post' );
 
@@ -49,7 +55,7 @@ function rt_column_contents( $column_name, $post_id ) {
 		if ( !empty( $terms ) ) {
 			$out = array();
 			foreach ( $terms as $term )
-				$termlist[] = "<a href='edit.php?".$taxonomy->rewrite['slug']."=$term->slug'> " . esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, $taxonomy_name, 'display' ) ) . "</a>";
+				$termlist[] = "<a href='edit.php?" . $type . $taxonomy->rewrite['slug']."=$term->slug'> " . esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, $taxonomy_name, 'display' ) ) . "</a>";
 			echo join( ', ', $termlist );
 		} else {
 			printf( __( 'No %s.'), $taxonomy->label );
