@@ -4,7 +4,7 @@ Plugin Name: Custom Taxonomy Columns
 Description: Give custom taxonomies a column on the manage posts admin page. 
 Author: _FindingSimple
 Author URI: http://findingsimple.com/
-Version: 1.0
+Version: 1.1
 */
 
 

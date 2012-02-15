@@ -3,8 +3,9 @@ Contributors: jconroy, thenbrent
 Tags: custom taxonomies, columns
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
+Sputnik ID: custom-taxonomy-columns
 
 Add a column in the manage posts table for custom taxonomies. 
 

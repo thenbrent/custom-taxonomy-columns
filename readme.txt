@@ -3,7 +3,7 @@ Contributors: jconroy, thenbrent
 Tags: custom taxonomies, columns
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 
 Add a column in the manage posts table for custom taxonomies. 
@@ -30,6 +30,10 @@ To display all the custom taxonomy items that relate to a post on the manage pos
 Nothing to configure. No settings. No options. Activate and it will work. 
 
 == Changelog ==
+
+= 1.1 =
+
+* Now working with Custom Post Types
 
 = 1.0 =
 
